@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block pageheader %}
+<div class="d-flex align-items-center justify-content-center text-center bg-light"
+     style="height: 100vh; border-radius: 12px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);">
+    <div class="col-md-6">
+        <h1 class="display-2 fw-bold text-primary">Moin E-Market</h1>
+        <p class="lead text-dark">Discover the best deals on all products you love.</p>
+        <a class="btn btn-outline-secondary btn-lg fw-bold px-4 py-2 mt-3" 
+           href="{% url 'items_page' %}" 
+           style="border-radius: 8px; transition: all 0.3s;">
+            🛒 Start Shopping
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

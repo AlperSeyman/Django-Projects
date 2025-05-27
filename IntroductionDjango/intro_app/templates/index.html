@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+<h1>Welcome, Home Page</h1>
+
+{% if user.is_authenticated %}
+    <p>{{ user.username }}</p>
+{% else %}
+    <p>Welcome One Page Website</p>
+{% endif %}
+

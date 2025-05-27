@@ -1,0 +1,7 @@
+<h1>Counter Page</h1>
+
+{% for post in posts %}
+    <h4>
+        <a href="{% url 'post_page' post %}">{{ post }}</a>        
+    </h4>
+{% endfor %}

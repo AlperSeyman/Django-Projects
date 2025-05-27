@@ -1,0 +1,22 @@
+1- Execute "django-admin startproject 'project_name' " command in terminal.
+2- Go to 'project_name' file with cd command
+3- If you want to start project, you should write "python manage.py runserver" command in terminal
+4- Execute "django-admin startapp 'app_name' " command in terminal.
+5- Create "urls.py" in the new app file.
+6- Create Templates, and styling pages
+7- Template Inheritance
+8- Designing Homepage
+9- Navbar Creation
+10- Working Database - Django Models (Object Relation Mapper)
+11- Create model
+12- Execute "python manage.py migrate" command in terminal
+13- Execute "python manage.py makemigraions" command in terminal
+14- Execute "python manage.py migrate" command in terminal
+15- Admin page
+16- Creating admin user 
+17- Execute "python manage.py createsuperuser" command in terminal
+18- Designing Items Page
+19- Creating Modal to see More Info and purchase Item
+20- Creating Login and Register System 
+21- Creating Purchase Operation
+22- Creating Django Messages

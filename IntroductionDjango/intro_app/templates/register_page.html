@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+
+<h1>Register Page</h1>
+
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <p>Username:</p>
+    <input type="text" name="username">
+
+    <p>Email:</p>
+    <input type="email" name="email">
+
+    <p>Password</p>
+    <input type="password" name="password">
+
+    <p>Confirm Password</p>
+    <input type="password" name="password2">
+    <br>
+    <input type="submit">
+</form>
+

@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-center fw-bold text-primary">Available Items</h2>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %} 
+                    {% include 'main/includes/items_modals.html' %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th> <!-- Auto-increment row numbers -->
+                    <td class="fw-bold">{{ item.name }}</td>
+                    <td>
+                        {{ item.image_url }}
+                    </td>
+                    <td class="text-success fw-bold">$ {{ item.price }}</td>
+                    <td>
+                       <!-- More Info Button -->
+                        <button type="button" class="btn btn-primary btn-lg fw-bold px-4" data-bs-toggle="modal" data-bs-target="#Modal-MoreInfo{{ item.pk }}" style="transition: all 0.3s ease;">
+                            ℹ️ More Info
+                        </button>
+
+                        <!-- Purchase Button -->
+                        <button type="button" class="btn btn-success btn-lg fw-bold px-4 ms-2" data-bs-toggle="modal" data-bs-target="#Modal-PurchaseConfirm{{ item.pk }}" style="transition: all 0.3s ease;">
+                            🛒 Purchase
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
