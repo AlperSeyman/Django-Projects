@@ -1,0 +1,15 @@
+{% extends 'imsApp/index.html' %}
+
+{% block content %}
+
+
+    <h2 class="text-center">Delete Product</h2>
+    <h5 class="text-center">Are you sure want to delete this product ?</h5>
+    <form method="post" class="text-center">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes</button>
+        <a href="{% url 'product_list' %}" class="btn btn-secondary">No</a>
+    </form>
+
+
+{% endblock %}

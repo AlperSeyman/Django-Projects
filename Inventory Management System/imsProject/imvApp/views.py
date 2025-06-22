@@ -12,13 +12,13 @@ def home_page(request):
 
 # Create Product Page
 def create_product_page(request):
-    create_product_form = ProductForm()
+    form = ProductForm()
     if request.method == 'POST':
-        create_product_form = ProductForm(request.POST)
-        if create_product_form.is_valid():
-            create_product_form.save()
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
             return redirect('product_list')
-    return render(request, template_name='imsApp/product_form.html', context={'title':'Product Form', 'create_product_form':create_product_form})
+    return render(request, template_name='imsApp/product_form.html', context={'title':'Product Form', 'form':form})
 
 
 # Read Product Page
@@ -30,16 +30,13 @@ def read_product_page(request):
 # Update Product Page
 def update_product_page(request, product_id):
     current_product = Product.objects.get(product_id=product_id)
-    
+    form = ProductForm(instance=current_product)
     if request.method == 'POST':
         updated_product_form = ProductForm(request.POST, instance=current_product)
         if updated_product_form.is_valid():
             updated_product_form.save()
             return redirect('product_list')
-    else:
-        product = ProductForm(instance=current_product)
-    
-    return render(request, template_name='imsApp/product_list.html', context={'title':'Update Product', 'product':product})
+    return render(request, template_name='imsApp/product_form.html', context={'title':'Update Product', 'form':form})
 
 
 # Delete Product

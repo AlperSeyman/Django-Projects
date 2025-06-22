@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>IMS - {{ title }}</title>
+    {% else %}
+        <title>IMS</title>
+    {% endif %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+            body{
+                padding-top: 56px;
+            }
+            .navbar{
+                background-color: #343a40;
+            }
+            .navbar-brand, .navbar-link{
+                color: #fff !important
+            }
+            .container{
+                margin-top: 20px;
+            }
+            .table th, .table td{
+                vertical-align: middle;
+            }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a href="{% url 'home_page' %}" class="navbar-brand">Inventory App</a>
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>    
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{% url 'create_product' %}" class="nav-link">Add Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'product_list' %}" class="nav-link">Show Products</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'imsApp/index.html' %}
+
+{% block content %}
+
+
+    <h2 class="text-center">Products</h2>
+    <table class="table table-bordered table-striped text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Supplier</th>
+                <th>Actions</th>
+            </tr>
+        </thead>   
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.product_id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.sku }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.supplier }}</td>
+                <td>
+                    <a href="{% url 'update_product' product.product_id %}" class="btn btn-warning">Update</a>
+                    <a href="{% url 'delete_product' product.product_id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody> 
+    </table>
+    
+
+
+
+{% endblock %}
