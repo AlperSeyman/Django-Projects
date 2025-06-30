@@ -1,0 +1,29 @@
+{% extends 'webapp/base.html' %}
+
+<title>{% block title %}Home{% endblock %}</title>
+
+{% block content %}
+
+    <body>
+            <br>
+            <br>
+            
+            <div class="text-center">
+
+                <h3> Project Blue Book... Management at it's finest!</h3>
+
+                <br>
+
+                <h5>Keep track of your records effectively</h5>
+                
+                <hr>
+                <hr>
+
+                <br>
+
+                <a href="{% url 'register' %}" class="btn btn-danger" type="button">Create your account</a>
+
+            </div>
+    </body>
+
+{% endblock %}
