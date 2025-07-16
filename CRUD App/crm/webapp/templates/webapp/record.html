@@ -1,0 +1,53 @@
+{% extends 'webapp/base.html' %}
+
+<title>{% block title %}Record{% endblock %}</title>
+
+
+
+{% block content %}
+
+<body>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        
+        <h3>Record Information</h3>
+
+        <h6>Start updating and deleting your record</h6>
+
+        <hr>
+        <br>
+
+        <div class="card">
+        <div class="card-header">
+            {{ record.first_name }} {{ record.last_name }}
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <strong>Email: </strong>{{ record.email }}
+                <br>
+                <strong>Phone: </strong>{{ record.phone }}
+                <br>
+                <strong>Address: </strong>{{ record.address }}
+                <br>
+                <strong>City: </strong>{{ record.city }}
+                <br>
+                <strong>Province: </strong>{{ record.province }}
+                <br>
+                <strong>Country: </strong>{{ record.country }}
+                <br>
+            </p>        
+        </div>
+    </div>
+    <br><br>
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back</a>
+
+   <a href="{% url 'delete_record' record.id %}" class="btn btn-danger">Delete</a>
+
+   <a href="{% url 'update_record' record.id %}" class="btn btn-secondary">Update</a>
+        <br>
+    </div>
+    <br>
+</body>
+
+    
+
+{% endblock %}

@@ -42,7 +42,7 @@
                     <td>{{ record.city }}</td>
                     <td>{{ record.province }}</td>
                     <td>{{ record.country }}</td>
-                    <td><a href="">view</a></td>    
+                    <td><a href="{% url 'show_record' record.id %}">view</a></td>    
                 </tr>
                 {% endfor %}
             {% endif %}

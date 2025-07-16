@@ -35,8 +35,16 @@ class LoginForm(AuthenticationForm):
         })
     )
 
-
+# Create record form
 class CreateRecordForm(forms.ModelForm):
+
+    class Meta:
+        model = Record
+        fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'city', 'province', 'country']
+
+
+# Update recod form
+class UpdateRecordForm(forms.ModelForm):
 
     class Meta:
         model = Record
