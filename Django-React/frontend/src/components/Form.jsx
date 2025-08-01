@@ -3,6 +3,7 @@ import api from "../api";                      // Import custom axios instance f
 import { useNavigate } from "react-router-dom"; // Import navigation hook to programmatically change pages
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants"; // Import token keys for localStorage
 import "../styles/Form.css"
+import Loading from "./Loading";
 
 // The Form component receives two props:
 //  - route: the API endpoint to send the form data to (e.g., "api/login/")
@@ -65,6 +66,7 @@ function Form({route, method}) {
                 placeholder="password"                    // Placeholder text
             />
             {/* Submit button */}
+            {Loading && <Loading />}
             <button className="form-button" type="submit">
                 {name}  {/* Button text based on method */}
             </button>

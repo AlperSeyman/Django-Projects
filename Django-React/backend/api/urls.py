@@ -8,6 +8,6 @@ urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name="get_token"),
     path('token/refresh/', TokenRefreshView.as_view(), name="refresh_token"),
     path('notes/', NotesListCreate.as_view(), name="note-list"),
-    path('notes/delete/<int:pk>', NoteDelete.as_view(), name="delete-note")
+    path('notes/delete/<int:pk>/', NoteDelete.as_view(), name="delete-note")
     
 ]
